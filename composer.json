@@ -1,0 +1,34 @@
+{
+    "name": "swissup/module-upward-connector",
+    "description": "Magento module used for routing all frontend requests through UPWARD-PHP. Wrapper for magento/module-upward-connector",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "~7.4.0||~8.1.0",
+        "magento/module-upward-connector": "*",
+        "magento/framework": "*",
+        "magento/upward": "*",
+        "magento/module-config": "*",
+        "magento/module-store": "*",
+        "magento/module-catalog": "*",
+        "magento/module-cms": "*",
+        "magento/module-url-rewrite": "*",
+        "magento/module-url-rewrite-graph-ql": "*",
+        "magento/module-catalog-url-rewrite-graph-ql": "*",
+        "yireo/magento2-disable-service-worker-in-admin": "^0.0.2"
+    },
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Swissup\\UpwardConnector\\": ""
+        }
+    }
+}
