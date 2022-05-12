@@ -1,5 +1,6 @@
-# Magento 2 UPWARD connector module
+# Swissup 2 UPWARD connector module
 
+The Swissup 2 UPWARD connector extends and fix some functionatity of Magento 2 UPWARD connector.
 The Magento 2 UPWARD connector is a module for routing requests to UPWARD-PHP. This module replaces the default Magento frontend theme with a PWA Studio storefront application.
 PWA Studio storefront deployments in the Magento Commerce use this module to keep Magento and storefront code on the same server.
 
