@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\UpwardConnector\Api\UpwardPathManagerInterface">
+        <plugin name="swissup_upward_connector_enabled" sortOrder="10" type="Swissup\UpwardConnector\Plugin\Api\UpwardPathManagerInterfacePlugin" />
+    </type>
+</config>
