@@ -3,6 +3,11 @@
         <web>
             <upward>
                 <enabled>1</enabled>
+                <NODE_ENV>production</NODE_ENV>
+                <MAGENTO_BACKEND_URL>{{base_url}}</MAGENTO_BACKEND_URL>
+<!--                <MAGENTO_BACKEND_EDITION>CE</MAGENTO_BACKEND_EDITION>-->
+<!--                <IMAGE_OPTIMIZING_ORIGIN>backend</IMAGE_OPTIMIZING_ORIGIN>-->
+<!--                <ENABLE_EXPRESS_SERVER_COMPRESSION>0</ENABLE_EXPRESS_SERVER_COMPRESSION>-->
             </upward>
         </web>
     </default>

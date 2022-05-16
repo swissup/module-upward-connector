@@ -4,19 +4,58 @@
     <system>
         <section id="web">
             <group id="upward">
-<!--            <group id="upward" translate="label" type="text" sortOrder="300"-->
-<!--                showInDefault="1" showInWebsite="1" showInStore="1">-->
-<!--                <label>UPWARD PWA Configuration</label>-->
-<!--                <field id="path" type="text" showInDefault="0" showInWebsite="0" showInStore="0" />-->
-<!--                <field id="front_names_to_skip" canRestore="1" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30" translate="label,comment" type="textarea">-->
-<!--                    <label>Front Name Allowlist</label>-->
-<!--                    <comment>Line break separated list of URL's that will load the default Magento frontend.</comment>-->
-<!--                </field>-->
                 <field id="enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label,comment" type="select">
                     <label>Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment>If enabled .</comment>
                 </field>
+
+                <group id="env" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enviroment variables</label>
+                        <comment><![CDATA[<p>
+                        <a href="https://developer.adobe.com/commerce/pwa-studio/tutorials/production-deployment/adobe-commerce/#buildtime-variables">Buildtime variables</a>.
+                        <a href="https://developer.adobe.com/commerce/pwa-studio/api/buildpack/environment/variables/">More environment variables</a>.
+                    </p>]]></comment>
+
+                    <field id="NODE_ENV" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="50" translate="label,comment" type="text">
+                        <label>NODE_ENV</label>
+                        <config_path>web/upward/NODE_ENV</config_path>
+                        <depends>
+                            <field id="web/upward/enabled">1</field>
+                        </depends>
+                    </field>
+
+                    <field id="MAGENTO_BACKEND_URL" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="60" translate="label,comment" type="text">
+                        <label>MAGENTO_BACKEND_URL</label>
+                        <comment>Specify URL or {{base_url}} placeholder.</comment>
+<!--                        <backend_model>Magento\Config\Model\Config\Backend\Baseurl</backend_model>-->
+                        <config_path>web/upward/MAGENTO_BACKEND_URL</config_path>
+                        <depends>
+                            <field id="web/upward/enabled">1</field>
+                        </depends>
+                    </field>
+
+<!--                    <field id="MAGENTO_BACKEND_EDITION" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="70" translate="label,comment" type="text">-->
+<!--                        <label>MAGENTO_BACKEND_EDITION</label>-->
+<!--                        <depends>-->
+<!--                            <field id="web/upward/enabled">1</field>-->
+<!--                        </depends>-->
+<!--                    </field>-->
+
+<!--                    <field id="IMAGE_OPTIMIZING_ORIGIN" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="80" translate="label,comment" type="text">-->
+<!--                        <label>IMAGE_OPTIMIZING_ORIGIN</label>-->
+<!--                        <depends>-->
+<!--                            <field id="web/upward/enabled">1</field>-->
+<!--                        </depends>-->
+<!--                    </field>-->
+
+<!--                    <field id="ENABLE_EXPRESS_SERVER_COMPRESSION" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="90" translate="label,comment" type="text">-->
+<!--                        <label>ENABLE_EXPRESS_SERVER_COMPRESSION</label>-->
+<!--                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+<!--                        <depends>-->
+<!--                            <field id="web/upward/enabled">1</field>-->
+<!--                        </depends>-->
+<!--                    </field>-->
+                </group>
 
             </group>
         </section>

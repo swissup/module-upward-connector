@@ -4,4 +4,17 @@
     <type name="Magento\UpwardConnector\Api\UpwardPathManagerInterface">
         <plugin name="swissup_upward_connector_enabled" sortOrder="10" type="Swissup\UpwardConnector\Plugin\Api\UpwardPathManagerInterfacePlugin" />
     </type>
+
+    <type name="Magento\UpwardConnector\Controller\Upward">
+        <arguments>
+            <argument name="upwardFactory" xsi:type="object">Swissup\UpwardConnector\Controller\UpwardFactory</argument>
+        </arguments>
+        <plugin name="swissup_upward_connector_enabled" sortOrder="10" type="Swissup\UpwardConnector\Plugin\Api\UpwardPathManagerInterfacePlugin" />
+    </type>
+
+    <type name="Swissup\UpwardConnector\Controller\UpwardFactory">
+        <arguments>
+            <argument name="upwardControllerClassName" xsi:type="string">\Swissup\UpwardConnector\Controller\Upward</argument>
+        </arguments>
+    </type>
 </config>

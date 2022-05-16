@@ -9,21 +9,16 @@ use Magento\Store\Model\ScopeInterface;
 class UpwardPathManagerInterfacePlugin
 {
     /**
-     * @var ScopeConfigInterface
+     * @var \Swissup\UpwardConnector\Helper\Config
      */
-    private $scopeConfig;
-
-    /**
-     * Information about module is activate
-     */
-    const UPWARD_CONFIG_PATH_ENABLED = 'web/upward/enabled';
+    private $helperConfig;
 
     /**
      * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      */
-    public function __construct(ScopeConfigInterface $scopeConfig)
+    public function __construct(\Swissup\UpwardConnector\Helper\Config $helperConfig)
     {
-        $this->scopeConfig = $scopeConfig;
+        $this->helperConfig = $helperConfig;
     }
 
     /**
@@ -46,9 +41,6 @@ class UpwardPathManagerInterfacePlugin
      */
     private function isEnabled()
     {
-        return $this->scopeConfig->isSetFlag(
-            self::UPWARD_CONFIG_PATH_ENABLED,
-            ScopeInterface::SCOPE_STORE
-        );
+        return $this->helperConfig->isEnabled();
     }
 }
