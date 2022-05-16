@@ -16,6 +16,8 @@
         "magento/module-url-rewrite": "*",
         "magento/module-url-rewrite-graph-ql": "*",
         "magento/module-catalog-url-rewrite-graph-ql": "*",
+        "swissup/module-core": "^1.12.7",
+        "swissup/module-pwa-studio-integration": "^1.0.0",
         "yireo/magento2-disable-service-worker-in-admin": "^0.0.2"
     },
     "type": "magento2-module",
