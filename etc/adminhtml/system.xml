@@ -16,7 +16,7 @@
                         <a href="https://developer.adobe.com/commerce/pwa-studio/api/buildpack/environment/variables/">More environment variables</a>.
                     </p>]]></comment>
 
-                    <field id="NODE_ENV" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="50" translate="label,comment" type="text">
+                    <field id="NODE_ENV" canRestore="1" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="50" translate="label,comment" type="text">
                         <label>NODE_ENV</label>
                         <config_path>web/upward/NODE_ENV</config_path>
                         <depends>
@@ -24,7 +24,7 @@
                         </depends>
                     </field>
 
-                    <field id="MAGENTO_BACKEND_URL" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="60" translate="label,comment" type="text">
+                    <field id="MAGENTO_BACKEND_URL" canRestore="1" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="60" translate="label,comment" type="text">
                         <label>MAGENTO_BACKEND_URL</label>
                         <comment>Specify URL or {{base_url}} placeholder.</comment>
 <!--                        <backend_model>Magento\Config\Model\Config\Backend\Baseurl</backend_model>-->
