@@ -8,15 +8,19 @@ PWA Studio storefront deployments in the Magento Commerce use this module to kee
 ### Contents
 
  1. [Installation](#installation)
- 2. [Usage](#configuration)
+ 2. [Configuration](#configuration)
 
 ### Installation
 
 ```bash
 cd <magento_root>
 composer require swissup/module-upward-connector
-bin/magento module:enable Swissup_Core Swissup_UpwardConnector Magento_UpwardConnector
+bin/magento module:enable $(bin/magento module:status –disabled | grep 'Swissup_Core\|Pwa\|Aux\|Upward' | tr '\r\n' ' ')
 bin/magento setup:upgrade
+bin/magento setup:di:compile
+bin/magento setup:static-content:deploy
+bin/magento cache:clean
+
 ```
 
 ### Configuration
