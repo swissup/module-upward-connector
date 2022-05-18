@@ -7,6 +7,7 @@
     "require": {
         "php": "~7.4.0||~8.1.0",
         "magento/module-upward-connector": "*",
+        "magento/pwa": "*",
         "magento/framework": "*",
         "magento/upward": "*",
         "magento/module-config": "*",
