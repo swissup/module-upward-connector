@@ -40,6 +40,18 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
     }
 
     /**
+     * @return bool
+     */
+    public function isNotPwaPath()
+    {
+        $path = $this->_getRequest()->getPathinfo();
+        $pathesToSkip = [
+            '/stores/store/switch/'
+        ];
+        return in_array($path, $pathesToSkip);
+    }
+
+    /**
      * @param $store
      * @return string
      */

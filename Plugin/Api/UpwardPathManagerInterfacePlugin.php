@@ -41,6 +41,6 @@ class UpwardPathManagerInterfacePlugin
      */
     private function isEnabled()
     {
-        return $this->helperConfig->isEnabled();
+        return $this->helperConfig->isEnabled() && !$this->helperConfig->isNotPwaPath();
     }
 }
