@@ -44,7 +44,9 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isNotPwaPath()
     {
-        $path = $this->_getRequest()->getPathinfo();
+        /** @var \Magento\Framework\App\Request\Http $request */
+        $request = $this->_getRequest();
+        $path = $request->getPathinfo();
         $pathesToSkip = [
             '/stores/store/switch/'
         ];
@@ -52,7 +54,7 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
     }
 
     /**
-     * @param $store
+     * @param null|int|string $store
      * @return string
      */
     public function getNodeEnv($store = null)
@@ -61,7 +63,7 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
     }
 
     /**
-     * @param $store
+     * @param null|int|string $store
      * @return string
      */
     public function getMagentoBackendUrl($store = null)

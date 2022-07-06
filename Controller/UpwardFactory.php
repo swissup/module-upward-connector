@@ -35,7 +35,7 @@ class UpwardFactory extends \Magento\UpwardConnector\Controller\UpwardController
      * @param ObjectManagerInterface $objectManager
      * @param UpwardPathManagerInterface $pathManager
      * @param \Swissup\UpwardConnector\Helper\Config $helperConfig
-     * @param $upwardControllerClassName
+     * @param string $upwardControllerClassName
      */
     public function __construct(
         ObjectManagerInterface $objectManager,

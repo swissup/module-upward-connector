@@ -12,12 +12,12 @@ use Magento\Store\Model\ScopeInterface;
 class Upward extends \Magento\Upward\Controller
 {
     /**
-     * @var Context|\Swissup\UpwardConnector\Model\Context|void
+     * @var \Magento\Upward\Context|null
      */
     private $context;
 
     /**
-     * @var \Magento\Upward\Definition|Definition
+     * @var \Magento\Upward\Definition|null
      */
     private $definition;
 
@@ -40,7 +40,7 @@ class Upward extends \Magento\Upward\Controller
      * @param Request $request
      * @param string $upwardConfig
      * @param \Swissup\UpwardConnector\Helper\Config $helperConfig
-     * @param array|null $additionalResolvers
+     * @param array<string>|null $additionalResolvers
      */
     public function __construct(
         Request $request,
@@ -61,7 +61,7 @@ class Upward extends \Magento\Upward\Controller
     }
 
     /**
-     * @return Context|\Swissup\UpwardConnector\Model\Context|void
+     * @return \Magento\Upward\Context
      */
     public function getContext()
     {
@@ -87,7 +87,7 @@ class Upward extends \Magento\Upward\Controller
 
     /**
      * @param $upwardConfig
-     * @return \Magento\Upward\Definition|Definition
+     * @return \Magento\Upward\Definition
      */
     public function getDefinition($upwardConfig)
     {
@@ -109,6 +109,9 @@ class Upward extends \Magento\Upward\Controller
      */
     public function __invoke(): Response
     {
+        $status  = 200;
+        $headers = [];
+        $body = '';
         try {
             foreach (self::STANDARD_FIELDS as $key) {
                 ${$key} = $this->definitionIterator->get($key);

@@ -14,7 +14,7 @@ class UpwardPathManagerInterfacePlugin
     private $helperConfig;
 
     /**
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+     * @param \Swissup\UpwardConnector\Helper\Config $helperConfig
      */
     public function __construct(\Swissup\UpwardConnector\Helper\Config $helperConfig)
     {
