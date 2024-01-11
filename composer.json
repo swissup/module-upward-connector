@@ -17,12 +17,12 @@
         "magento/module-url-rewrite": "*",
         "magento/module-url-rewrite-graph-ql": "*",
         "magento/module-catalog-url-rewrite-graph-ql": "*",
-        "swissup/module-core": "^1.12.9",
+        "swissup/module-core": "^1.12.18",
         "swissup/module-pwa-studio-integration": "^1.0.0",
         "yireo/magento2-disable-service-worker-in-admin": "^0.0.2"
     },
     "type": "magento2-module",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
